@@ -1,6 +1,4 @@
-
 from datetime import date
-
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .models import User, Book, BorrowedBooks, BookDetails
@@ -25,10 +23,13 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .models import BorrowedBooks
 from .forms import BorrowBookForm
-
-
-
 from django.shortcuts import render
+from django.shortcuts import render
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from .forms import BorrowBookForm
+from .models import BorrowedBooks
+from .serializers import BorrowedBooksSerializer
 
 
 
@@ -121,20 +122,9 @@ def assign_update_book_details(request, book_id):
 
     elif request.method == 'GET':
         # Retrieve existing book details
-        serializer = BookDetailsSerializer(book.bookdetails)  # Use the correct related field name
+        serializer = BookDetailsSerializer(book.bookdetails)
         return Response(serializer.data)
 
-
-
-
-
-
-from django.shortcuts import render
-from rest_framework.decorators import api_view
-from rest_framework.response import Response
-from .forms import BorrowBookForm
-from .models import BorrowedBooks
-from .serializers import BorrowedBooksSerializer
 
 @api_view(['GET', 'POST'])
 def borrow_book(request):

@@ -3,6 +3,8 @@ from rest_framework import serializers
 from .models import User, Book, BookDetails, BorrowedBooks
 from rest_framework import serializers
 from .models import BookDetails
+from rest_framework import serializers
+from .models import BorrowedBooks
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -21,9 +23,6 @@ class BookDetailsSerializer(serializers.ModelSerializer):
         model = BookDetails
         fields = '__all__'
 
-
-from rest_framework import serializers
-from .models import BorrowedBooks
 
 class BorrowedBooksSerializer(serializers.ModelSerializer):
     class Meta:

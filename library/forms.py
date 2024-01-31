@@ -17,8 +17,6 @@ class AddBookForm(forms.ModelForm):
         widgets = {
             'PublishedDate': forms.DateInput(attrs={'type': 'date'}),
         }
-# library/forms.py
-# library/forms.py
 from django import forms
 from .models import BorrowedBooks
 
