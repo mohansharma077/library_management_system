@@ -1,0 +1,12 @@
+<!-- create_user.html -->
+<form method="post" action="{% url 'library:create_user' %}">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Submit</button>
+</form>
+
+{% if errors %}
+  <div class="errors">
+    {{ errors }}
+  </div>
+{% endif %}

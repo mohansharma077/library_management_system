@@ -1,0 +1,10 @@
+<!-- library/templates/return_book.html -->
+
+{% block content %}
+  <h2>Return a Book</h2>
+  <form method="post" action="{% url 'return_book' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Return</button>
+  </form>
+{% endblock %}

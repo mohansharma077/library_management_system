@@ -1,0 +1,10 @@
+<!-- library/templates/borrow_book.html -->
+
+{% block content %}
+  <h2>Borrow a Book</h2>
+  <form method="post" action="{% url 'library:borrow_book' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Borrow</button>
+  </form>
+{% endblock %}

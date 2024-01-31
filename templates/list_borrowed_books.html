@@ -1,0 +1,8 @@
+{% block content %}
+  <h2>List of Borrowed Books</h2>
+  <ul>
+    {% for borrowed_book in borrowed_books %}
+      <li>{{ borrowed_book.BookID.Title }} - Borrowed by {{ borrowed_book.UserID.Name }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
